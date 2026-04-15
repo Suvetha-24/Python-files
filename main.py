@@ -1,21 +1,24 @@
-a=input("Enter a Password")
-up=0
-sm=0
-dg=0
-sp=0
-if(len(a)>7):
-    for i in a:
-        if i. isupper():
-            up=up+1
-        elif i. islower():
-            sm=sm+1
-        elif i. isdigit():
-            dg=dg+1
+secret_number=35
+print("welcome to the game of guesing the number:!!")
+print("Guess the number correctly between 1 to 100")
+
+
+for i in range(1,9):
+    try:
+        user_input=int(input("enter the number corectly"))
+        if user_input <1 or user_input >100:
+            print("invalid number!!")
+        elif user_input > secret_number:
+            print("your number is higher")
+        elif user_input < secret_number:
+            print("your number is lesser")
         else:
-            sp=sp+1
-    if (up>0 and sm>0 and sp>0 and dg>0):
-        print("Strong password")
-    else:
-        print("Weak Password")
+            print("yoour guessed number is correct!! WINNER")
+            break
+    except ValueError:
+        print("invalid charcters,numbers only try again")
+    
+if secret_number== user_input:
+    print(f"Congratulation,you have guessed number{secret_number} in {i} attempts")
 else:
-    print("Less characters")
+    print("Sorrry 🥂. Try agaim!")
